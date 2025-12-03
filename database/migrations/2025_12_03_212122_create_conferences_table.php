@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
@@ -17,9 +17,11 @@ return new class extends Migration
             $table->text('description');
             $table->date('conference_date');
             $table->string('address');
-            // Papildomi laukai (bonus)
+
+            // Bonus fields
             $table->integer('participants_count')->nullable();
             $table->string('city')->nullable();
+
             $table->timestamps();
         });
     }
