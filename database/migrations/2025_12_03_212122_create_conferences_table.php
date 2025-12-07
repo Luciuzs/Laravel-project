@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('conferences', function (Blueprint $table) {
@@ -18,7 +16,7 @@ return new class extends Migration
             $table->date('conference_date');
             $table->string('address');
 
-            // Bonus fields
+
             $table->integer('participants_count')->nullable();
             $table->string('city')->nullable();
 
@@ -26,9 +24,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('conferences');

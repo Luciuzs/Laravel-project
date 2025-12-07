@@ -1,20 +1,18 @@
-<?php
 @extends('layouts.app')
 
-@section('title', __('messages.login'))
+@section('title', 'Login')
 
 @section('content')
     <div class="max-w-md mx-auto">
         <div class="bg-white shadow-md rounded-lg p-8">
-            <h2 class="text-2xl font-bold mb-6 text-center">{{ __('messages.login') }}</h2>
+            <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
 
             <form action="{{ route('login') }}" method="POST">
                 @csrf
 
-                <!-- Email -->
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 font-medium mb-2">
-                        {{ __('messages.email') }}
+                        Email
                     </label>
                     <input
                         type="email"
@@ -29,10 +27,9 @@
                     @enderror
                 </div>
 
-                <!-- Password -->
                 <div class="mb-6">
                     <label for="password" class="block text-gray-700 font-medium mb-2">
-                        {{ __('messages.password') }}
+                        Password
                     </label>
                     <input
                         type="password"
@@ -46,12 +43,11 @@
                     @enderror
                 </div>
 
-                <!-- Submit Button -->
                 <button
                     type="submit"
                     class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition"
                 >
-                    {{ __('messages.login') }}
+                    Login
                 </button>
             </form>
         </div>

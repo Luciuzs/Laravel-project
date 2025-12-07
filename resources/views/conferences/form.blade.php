@@ -1,4 +1,4 @@
-<?php
+
 <!-- Title -->
 <div class="mb-4">
     <label for="title" class="block text-gray-700 font-medium mb-2">
