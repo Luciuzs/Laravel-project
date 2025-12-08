@@ -4,16 +4,15 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConferenceController;
 use Illuminate\Support\Facades\Route;
 
-// Auth routai
+// Authentication routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Public
+// Public routes
 Route::get('/', [ConferenceController::class, 'index'])->name('conferences.index');
-Route::get('/conferences/{id}', [ConferenceController::class, 'show'])->name('conferences.show');
 
-// Protect
+// Protected routes - MUST BE BEFORE {id} routes!
 Route::middleware('auth')->group(function () {
     Route::get('/conferences/create', [ConferenceController::class, 'create'])->name('conferences.create');
     Route::post('/conferences', [ConferenceController::class, 'store'])->name('conferences.store');
@@ -21,3 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/conferences/{id}', [ConferenceController::class, 'update'])->name('conferences.update');
     Route::delete('/conferences/{id}', [ConferenceController::class, 'destroy'])->name('conferences.destroy');
 });
+
+// Public show route - MUST BE AFTER specific routes!
+Route::get('/conferences/{id}', [ConferenceController::class, 'show'])->name('conferences.show');

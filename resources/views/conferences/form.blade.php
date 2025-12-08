@@ -1,5 +1,6 @@
 
 <!-- Title -->
+
 <div class="mb-4">
     <label for="title" class="block text-gray-700 font-medium mb-2">
 {{ __('messages.title') }} <span class="text-red-500">*</span>
@@ -17,6 +18,7 @@
 @enderror
 </div>
 
+
 <!-- Description -->
 <div class="mb-4">
     <label for="description" class="block text-gray-700 font-medium mb-2">
@@ -33,6 +35,7 @@
     <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
     @enderror
 </div>
+
 
 <!-- Conference Date -->
 <div class="mb-4">
@@ -52,6 +55,7 @@
     @enderror
 </div>
 
+
 <!-- Address -->
 <div class="mb-4">
     <label for="address" class="block text-gray-700 font-medium mb-2">
@@ -70,7 +74,8 @@
     @enderror
 </div>
 
-<!-- Participants Count (Bonus field) -->
+
+<!-- Count -->
 <div class="mb-4">
     <label for="participants_count" class="block text-gray-700 font-medium mb-2">
         {{ __('messages.participants_count') }}
@@ -88,7 +93,7 @@
     @enderror
 </div>
 
-<!-- City (Bonus field) -->
+<!-- City -->
 <div class="mb-6">
     <label for="city" class="block text-gray-700 font-medium mb-2">
         {{ __('messages.city') }}
